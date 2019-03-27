@@ -1,0 +1,25 @@
+{
+  "name": "LDCA-UDG-08",
+  "version": "1.0.0",
+  "description": "Aplicación con Electron.js para interfaces de usuarios",
+  "main": "src/index.js",
+  "dependencies": {
+    "electron": "^4.1.1",
+    "electron-reload": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Castolo-10/LDCA-UDG-08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Castolo-10/LDCA-UDG-08/issues"
+  },
+  "homepage": "https://github.com/Castolo-10/LDCA-UDG-08#readme"
+}
