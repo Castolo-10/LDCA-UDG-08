@@ -34,10 +34,10 @@ function createNewProductWindow() {
   newProductWindow = new BrowserWindow({
     width: 400,
     height: 330,
-    title: 'Add a new product'
+    title: 'Agregar Producto'
   });
 
-  // newProductWindow.setMenu(null);
+  newProductWindow.setMenu(null);
 
   newProductWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'views/new-product.html'),
@@ -58,20 +58,24 @@ ipcMain.on('product:new', (e, newProduct) =>{
 
 const templateMenu = [
   {
-    label: 'File',
+    label: 'Archivo',
     submenu: [
       {
-        label: 'New Product',
+        label: 'Nuevo Producto',
         accelerator: 'Ctrl+N',
         click(){
           createNewProductWindow()
         }
       },
       {
-        label: 'Remove All Products',
+        label: 'Eliminar Todos Los Productos',
+        accelerator: 'Ctrl+R',
+        click(){
+          mainWindow.webContents.send('product:remove-all');
+        }
       },
       {
-        label: 'Exit',
+        label: 'Salir',
         accelerator: process.platform == 'darwin' ? 'command=Q' : 'Ctrl+Q',
         click() {
           app.quit();
